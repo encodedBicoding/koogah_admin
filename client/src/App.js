@@ -18,7 +18,7 @@ function App() {
           <Auth />
         </Route>
       </Switch>
-  </Router>
+    </Router>
   );
 }
 

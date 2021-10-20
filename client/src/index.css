@@ -1,3 +1,14 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  @variants responsive {
+    .h-1\/10 {
+      height: 10%;
+    }
+    .h-9\/10 {
+      height: 90%;
+    }
+  }
+}
