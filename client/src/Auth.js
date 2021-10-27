@@ -1,5 +1,5 @@
-import logo from './logo.svg';
-import authBanner from './auth_banner.svg';
+import logo from './assets/logo.svg';
+import authBanner from './assets/auth_banner.svg';
 import AuthLogin from './AuthLogin';
 import AuthForgot from './AuthForgot';
 import AuthReset from './AuthReset';
