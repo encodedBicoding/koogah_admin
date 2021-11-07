@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 function AuthFormInput({type, label, preIcon, postIcon, onPostIconClick}) {
-  const [errors, setErrors] = useState([]);
+  const [errors] = useState([]);
   const [focused, setFocused] = useState(false);
 
   return (
