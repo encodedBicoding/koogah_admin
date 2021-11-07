@@ -26,12 +26,6 @@ function Auth({ location }) {
     else return 'Please sign in to your account and continue with the Koogah experience'
   }, [location.pathname]);
 
-  const buttonText = useMemo(() => {
-    if(location.pathname === '/forgot') return 'submit'
-    else if(location.pathname === '/reset') return 'update password'
-    else return 'Sign In'
-  }, [location.pathname]);
-
   return (
     <>
       <header className="fixed w-full">
@@ -48,7 +42,7 @@ function Auth({ location }) {
             <div className="m-auto w-11/12">
               <h2 className="text-2xl text-center">{header}</h2>
               <p className="text-center text-sm px-8 mt-2">{leadText}</p>
-              <form className="mt-10 flex flex-col w-full">
+              <div className="mt-10 flex flex-col w-full">
                 <Switch>
                   <Route path="/forgot">
                     <AuthForgot />
@@ -60,8 +54,7 @@ function Auth({ location }) {
                     <AuthLogin />
                   </Route>
                 </Switch>
-                <button className="bg-primary uppercase py-2 rounded-md mt-9 shadow-lg tracking-wider">{buttonText}</button>
-              </form>
+              </div>
             </div>
           </main>
         </div>

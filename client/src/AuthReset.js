@@ -1,8 +1,12 @@
+import AuthFormInputPassword from './AuthFormInputPassword';
+import AuthFormButton from './AuthFormButton';
+
 function AuthReset() {
   return (
     <>
-      <input type="password" placeholder="Password"/>
-      <input type="password" placeholder="Confirm Password"/>
+      <AuthFormInputPassword label="Password" />
+      <AuthFormInputPassword label="Confirm Password" />
+      <AuthFormButton text="update password" />
     </>
   );
 }

@@ -1,6 +1,13 @@
+import { faEnvelope } from '@fortawesome/free-regular-svg-icons'
+import AuthFormInput from './AuthFormInput';
+import AuthFormButton from './AuthFormButton';
+
 function AuthForgot() {
   return (
-    <input type="email" placeholder="Email"  />
+    <>
+      <AuthFormInput type="email" label="Email" preIcon={faEnvelope} />
+      <AuthFormButton text="submit"  />
+    </>
   );
 }
 
