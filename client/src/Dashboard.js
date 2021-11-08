@@ -1,13 +1,13 @@
-import logo from './logo.svg'; // @TODO change this logo to the dashboard one
-import DashboardHome from './DashboardHome';
-import DashboardCustomers from './DashboardCustomers';
-import DashboardDispatchers from './DashboardDispatchers';
 import {
   Switch,
   Route,
   useRouteMatch,
   Link
 } from "react-router-dom";
+import logo from './logo.svg'; // @TODO change this logo to the dashboard one
+import DashboardHome from './DashboardHome';
+import DashboardCustomers from './DashboardCustomers';
+import DashboardDispatchers from './DashboardDispatchers';
 
 function Dashboard() {
   let match = useRouteMatch();
