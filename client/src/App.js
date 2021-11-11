@@ -14,9 +14,7 @@ function App() {
         <Route path="/dashboard">
           <Dashboard />
         </Route>
-        <Route path="/">
-          <Auth />
-        </Route>
+        <Route path="/" component={Auth} />
       </Switch>
     </Router>
   );

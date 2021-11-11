@@ -3,11 +3,10 @@ import DashboardSidebar from './DashboardSidebar';
 import DashboardHome from './DashboardHome';
 import DashboardCustomers from './DashboardCustomers';
 import DashboardDispatchers from './DashboardDispatchers';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBell } from '@fortawesome/free-solid-svg-icons'
-
-import { Switch, Route, useRouteMatch } from 'react-router-dom';
 import DashboardStaffs from './DashboardStaffs';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBell } from '@fortawesome/free-solid-svg-icons';
+import { Switch, Route, useRouteMatch } from 'react-router-dom';
 
 function Dashboard() {
   let match = useRouteMatch();
@@ -15,7 +14,9 @@ function Dashboard() {
   return (
     <>
       <header className="bg-black h-1/10">
-        <div className="container"><img src={logo} alt="logo" width="120" height="50" /></div>
+        <div className="container">
+          <img src={logo} alt="logo" width="120" height="50" />
+        </div>
       </header>
       <section className=" flex h-9/10">
         <DashboardSidebar />
@@ -44,7 +45,7 @@ function Dashboard() {
                 <DashboardDispatchers />
               </Route>
               <Route path={`${match.path}/staffs`}>
-                <DashboardStaffs/>
+                <DashboardStaffs />
               </Route>
               <Route path={match.path}>
                 <DashboardHome />
