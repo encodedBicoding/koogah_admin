@@ -4,6 +4,7 @@ import DashboardHome from './DashboardHome';
 import DashboardCustomers from './DashboardCustomers';
 import DashboardDispatchers from './DashboardDispatchers';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBell } from '@fortawesome/free-solid-svg-icons'
 
 import { Switch, Route, useRouteMatch } from 'react-router-dom';
 import DashboardStaffs from './DashboardStaffs';
@@ -17,7 +18,6 @@ function Dashboard() {
         <div className="container"><img src={logo} alt="logo" width="120" height="50" /></div>
       </header>
       <section className=" flex h-9/10">
-        {/* @TODO nav should be made a component */}
         <DashboardSidebar />
         <div className="w-3/4 overflow-y-scroll">
           {/* Header search begin  */}
@@ -31,7 +31,7 @@ function Dashboard() {
             <FontAwesomeIcon
               className="bg-yellow-200 p-1 rounded-full"
               size="2x"
-              icon="bell"
+              icon={faBell}
             />
           </div>
           {/* Header search ends  */}
