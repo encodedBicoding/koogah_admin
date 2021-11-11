@@ -1,12 +1,7 @@
-import {
-  Switch,
-  Route,
-  useRouteMatch,
-  Link
-} from "react-router-dom";
+import { Switch, Route, useRouteMatch, Link } from 'react-router-dom';
 import { useMemo } from 'react';
-import logo from './logo.svg';
-import authBanner from './auth_banner.svg';
+import logo from './assets/logo.svg';
+import authBanner from './assets/auth_banner.svg';
 import AuthLogin from './AuthLogin';
 import AuthForgot from './AuthForgot';
 import AuthReset from './AuthReset';
@@ -15,22 +10,27 @@ function Auth({ location }) {
   let match = useRouteMatch();
 
   const header = useMemo(() => {
-    if(location.pathname === '/forgot') return 'Forgot Password'
-    else if(location.pathname === '/reset') return 'Reset Password'
-    else return 'Welcome Back'
+    if (location.pathname === '/forgot') return 'Forgot Password';
+    else if (location.pathname === '/reset') return 'Reset Password';
+    else return 'Welcome Back';
   }, [location.pathname]);
 
   const leadText = useMemo(() => {
-    if(location.pathname === '/forgot') return 'We knew this might happen, and we got you. Please enter your email address to reset your password.'
-    else if(location.pathname === '/reset') return 'Enter a new password to gain access to your account'
-    else return 'Please sign in to your account and continue with the Koogah experience'
+    if (location.pathname === '/forgot')
+      return 'We knew this might happen, and we got you. Please enter your email address to reset your password.';
+    else if (location.pathname === '/reset')
+      return 'Enter a new password to gain access to your account';
+    else
+      return 'Please sign in to your account and continue with the Koogah experience';
   }, [location.pathname]);
 
   return (
     <>
       <header className="fixed w-full">
         <div className="container py-5">
-          <Link to="/"><img src={logo} alt="logo" /></Link>
+          <Link to="/">
+            <img src={logo} alt="logo" />
+          </Link>
         </div>
       </header>
       <section className="h-full flex">

@@ -1,13 +1,12 @@
-import {
-  Switch,
-  Route,
-  useRouteMatch,
-  Link
-} from "react-router-dom";
-import logo from './logo.svg'; // @TODO change this logo to the dashboard one
+import logo from './assets/logo.svg'; // @TODO change this logo to the dashboard one
+import DashboardSidebar from './DashboardSidebar';
 import DashboardHome from './DashboardHome';
 import DashboardCustomers from './DashboardCustomers';
 import DashboardDispatchers from './DashboardDispatchers';
+import DashboardStaffs from './DashboardStaffs';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBell } from '@fortawesome/free-solid-svg-icons';
+import { Switch, Route, useRouteMatch } from 'react-router-dom';
 
 function Dashboard() {
   let match = useRouteMatch();
@@ -16,45 +15,43 @@ function Dashboard() {
     <>
       <header className="bg-black h-1/10">
         <div className="container">
-          <img src={logo} alt="logo" />
+          <img src={logo} alt="logo" width="120" height="50" />
         </div>
       </header>
-      <section className="border-4 border-green-200 flex h-9/10">
-        {/* @TODO nav should be made a component */}
-        <nav className="border-4 border-red-200 w-1/4">
-          <h2>Navigations</h2>
+      <section className=" flex h-9/10">
+        <DashboardSidebar />
+        <div className="w-3/4 overflow-y-scroll">
+          {/* Header search begin  */}
+          <div className="px-6 flex space-x-10 items-center bg-white py-2 sticky top-0">
+            <input
+              class="appearance-none me-10 border rounded-full py-1.5 px-6 rounded w-10/12 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              id="search"
+              type="text"
+            />
 
-          <ul>
-            <li>
-              <Link to={`${match.url}`}>Dashboard</Link>
-            </li>
-            <li>
-              <Link to={`${match.url}/customers`}>
-                Customers
-              </Link>
-            </li>
-            <li>
-              <Link to={`${match.url}/dispatchers`}>
-                Dispatchers
-              </Link>
-            </li>
-          </ul>
-        </nav>
-        <div className="border-4 border-blue-200 w-3/4 overflow-y-scroll">
-          <div>
-            Top bar with search and Notification icon
+            <FontAwesomeIcon
+              className="bg-yellow-200 p-1 rounded-full"
+              size="2x"
+              icon={faBell}
+            />
           </div>
-          <Switch>
-            <Route path={`${match.path}/customers`}>
-              <DashboardCustomers />
-            </Route>
-            <Route path={`${match.path}/dispatchers`}>
-              <DashboardDispatchers />
-            </Route>
-            <Route path={match.path}>
-              <DashboardHome />
-            </Route>
-          </Switch>
+          {/* Header search ends  */}
+          <div className="bg-gray-100">
+            <Switch>
+              <Route path={`${match.path}/customers`}>
+                <DashboardCustomers />
+              </Route>
+              <Route path={`${match.path}/dispatchers`}>
+                <DashboardDispatchers />
+              </Route>
+              <Route path={`${match.path}/staffs`}>
+                <DashboardStaffs />
+              </Route>
+              <Route path={match.path}>
+                <DashboardHome />
+              </Route>
+            </Switch>
+          </div>
         </div>
       </section>
     </>
